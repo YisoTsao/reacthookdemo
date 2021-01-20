@@ -1,0 +1,134 @@
+//Colors
+$color-error: #e42d0d;
+$color-warning: #ffbb00;
+$color-accepted: #41e041;
+$color-normal: #00c3ff;
+$color-shadow: #d3d3d3;
+
+$border-radius: 0.4rem;
+
+body{
+  margin: 0px;
+}
+
+.navBox{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(77, 75, 77, 0.733);
+  color: #fff;
+  font-size: 20px;
+  height: 60px;
+}
+section {
+  font-family: helvetica, sans-serif;
+  margin-bottom: 2rem;
+}
+//MColor map
+$btn-colors: (
+  "error": $color-error,
+  "warning": $color-warning,
+  "accepted": $color-accepted,
+  "normal": $color-normal
+);
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  border-radius: $border-radius;
+  padding: 0.7rem 1.2rem;
+  &:hover {
+    box-shadow: $border-radius/2 $border-radius/2 $color-shadow;
+  }
+  &:active {
+    background-color: black;
+    color: white;
+  }
+}
+@each $t, $v in $btn-colors {
+  .btn-#{$t} {
+    background-color: $v;
+  }
+}
+//Table
+table {
+  border-collapse: collapse;
+
+  th{
+    background-color: #ffbb00;
+  }
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+$color-row-even: #cccccc;
+$color-row-odd: #888888;
+
+//Function even odd column color
+@function row-color($row-number) {
+  @if ($row-number%2 == 0) {
+    @return $color-row-even;
+  } @else {
+    @return $color-row-odd;
+  }
+}
+
+//Max col
+$start: 1;
+$end: 10;
+
+tbody tr td {
+  transition: all 1s ease;
+  &:hover {
+    background-color: violet;
+  }
+}
+
+@for $num from $start to $end {
+  tbody tr:nth-child(#{$num}) {
+    // background-color: row-color($num);
+  }
+}
+
+//Columns
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.row > * {
+  border: 1px solid black;
+  height: 150px;
+}
+
+//Max # of elements
+$num_elem: 8;
+
+//Width column
+@function col-width($i) {
+  @return (100 / $num_elem) * $i;
+}
+
+//Lopp for classs
+@for $i from 1 through $num_elem {
+  .row > .col-#{$i} {
+    padding: 1rem;
+    width: #{col-width($i)}+ "%";
+  }
+}
+
+
+.htitle{
+  font-size: 42px;
+  color: rgba(157, 245, 139, 0.733);
+
+  &:hover {
+    color: rgba(233, 131, 219, 0.733);
+   }
+}
