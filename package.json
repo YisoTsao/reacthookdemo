@@ -2,7 +2,7 @@
   "name": "reactinit",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "start": "webpack-cli serve --open --hot",
     "build": "webpack"

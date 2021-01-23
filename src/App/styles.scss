@@ -20,6 +20,31 @@ body{
   font-size: 20px;
   height: 60px;
 }
+
+.input-box{
+  border: 1px solid #ababab;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.formBox{
+  text-align: center;
+  border: 1px solid #dbdb;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px;
+  border-radius: 5px;
+}
+
+.invalid-text{
+  color: #e42d0d;
+  font-size: 12px;
+}
+
+.is-invalid{
+  border: 1px solid #ff5252;
+}
 section {
   font-family: helvetica, sans-serif;
   margin-bottom: 2rem;
