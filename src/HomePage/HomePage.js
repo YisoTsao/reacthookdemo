@@ -1,32 +1,29 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
+import { userActions } from "../_actions";
 
 function HomePage() {
-  const [inputs, setInputs] = useState({
-    username: "",
-    password: "",
-  });
+  const user = useSelector((state) => state.authentication.user);
+  const userParse = JSON.parse(user);
+  
+  const dispatch = useDispatch();
 
-  const [submitted, setSubmitted] = useState(false);
-  const { username, password } = inputs;
-
-  function handleSubmit(e) {
-    e.preventDefault();
-
-    setSubmitted(true);
-    if (username && password) {
-      alert('check');
-  }
-  }
-
-  function handleChange(e) {
-    const { name, value } = e.target;
-    setInputs((inputs) => ({ ...inputs, [name]: value }));
-  }
+  useEffect(() => {
+    // dispatch(userActions.getAll());
+  }, []);
 
   return (
     <div>
       <h1>home</h1>
-      
+      {user &&
+        <ul>
+        <li>{userParse.data.id}</li>
+        <li>{userParse.data.name}</li>
+        <li>{userParse.data.operator}</li>
+        </ul>
+      }
     </div>
   );
 }

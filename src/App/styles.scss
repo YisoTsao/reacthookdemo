@@ -22,24 +22,42 @@ body{
 }
 
 .input-box{
-  border: 1px solid #ababab;
-  border-radius: 3px;
-  padding: 10px;
+  border: 1px solid rgba(34, 36, 38, .15);
+  border-radius: 5px;
+  height: 24px;
+  padding: 6px;
+  background-color: #fff;
 }
 
 .formBox{
   text-align: center;
   border: 1px solid #dbdb;
   width: 100%;
-  max-width: 600px;
+  max-width: 400px;
   margin: 0 auto;
   padding: 16px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
+.formLabel{
+  color: #676767;
+  font-size: 14px;
+}
 .invalid-text{
   color: #e42d0d;
   font-size: 12px;
+}
+
+.loginBtn{
+  background-color: #ababab;
+  background-image: none;
+  padding: .5833em .833em;
+  color: #fff;
+  text-transform: none;
+  font-weight: 700;
+  border: 0 solid transparent;
+  border-radius: .28571429rem;
+  margin: 12px;
 }
 
 .is-invalid{
